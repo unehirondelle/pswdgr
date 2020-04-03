@@ -16,29 +16,36 @@ generateBtn.addEventListener("click", writePassword);
 //ask user to type the number of letters for a new password
 let passLength = prompt("How many characters the password should consist of?");
 let passLenghtNum = parseInt(passLength);
-console.log(passLenghtNum);
+console.log("promt " + passLength);
+console.log("PromtNum" + passLenghtNum);
 
 //ask user does he/she want the lowercase chars in the password
 //ask user does he/she want the uppercase chars in the password
 //ask user does he/she want the special chars in the password
 //ask user does he/she want the numbers in the password
 
-let lowerCaseChar = confirm("Do you want lowercase chars in your password?");
-let upperCaseChar = confirm("Do you want uppercase chars in your password?");
-let specialChar = confirm("Do you want special chars in your password?");
-let numChar = confirm("Do you want numbers in your password?");
+if (passLength >= 8 && passLength <= 128) {
+  let lowerCaseChar = confirm("Do you want lowercase chars in your password?");
+  let upperCaseChar = confirm("Do you want uppercase chars in your password?");
+  let specialChar = confirm("Do you want special chars in your password?");
+  let numChar = confirm("Do you want numbers in your password?");
+} else if (passLength !== "" && passLength !== null) {
+  alert("Please choose the number from 8 to 128");
+} else {
+  alert("Password will not be generated.");
+}
 
-console.log(lowerCaseChar);
-console.log(upperCaseChar);
-console.log(specialChar);
-console.log(numChar);
+// console.log(lowerCaseChar);
+// console.log(upperCaseChar);
+// console.log(specialChar);
+// console.log(numChar);
 
 let charTypes = [];
 
 function createCharType(char) {
-if (char == true) {
-  charTypes.push("true");
-}
+  if (char == true) {
+    charTypes.push("true");
+  }
 }
 
 createCharType(lowerCaseChar);
