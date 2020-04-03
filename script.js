@@ -24,27 +24,34 @@ console.log("PromtNum" + passLenghtNum);
 //ask user does he/she want the special chars in the password
 //ask user does he/she want the numbers in the password
 
+let lowerCaseChar = false;
+let upperCaseChar = false;
+let specialChar = false;
+let numChar = false;
+
 if (passLength >= 8 && passLength <= 128) {
-  let lowerCaseChar = confirm("Do you want lowercase chars in your password?");
-  let upperCaseChar = confirm("Do you want uppercase chars in your password?");
-  let specialChar = confirm("Do you want special chars in your password?");
-  let numChar = confirm("Do you want numbers in your password?");
+  lowerCaseChar = confirm("Do you want lowercase chars in your password?");
+  upperCaseChar = confirm("Do you want uppercase chars in your password?");
+  specialChar = confirm("Do you want special chars in your password?");
+  numChar = confirm("Do you want numbers in your password?");
 } else if (passLength !== "" && passLength !== null) {
   alert("Please choose the number from 8 to 128");
 } else {
   alert("Password will not be generated.");
 }
 
-// console.log(lowerCaseChar);
-// console.log(upperCaseChar);
-// console.log(specialChar);
-// console.log(numChar);
+console.log(lowerCaseChar);
+console.log(upperCaseChar);
+console.log(specialChar);
+console.log(numChar);
 
 let charTypes = [];
 
 function createCharType(char) {
   if (char == true) {
     charTypes.push("true");
+  } else {
+    charTypes.push("false");
   }
 }
 
