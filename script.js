@@ -47,19 +47,53 @@ console.log(numChar);
 
 let charTypes = [];
 
-function createCharType(char) {
+/* function createCharType(char) {
   if (char == true) {
     charTypes.push("true");
   } else {
     charTypes.push("false");
   }
+} */
+
+if (lowerCaseChar) {
+  charTypes.push("lowerCaseArr");
+}
+if (upperCaseChar) {
+  charTypes.push("upperCaseArr");
+}
+if (specialChar) {
+  charTypes.push("specialCharArr");
+}
+if (numChar) {
+  charTypes.push("numCharArr");
 }
 
-createCharType(lowerCaseChar);
+
+/* createCharType(lowerCaseChar);
 createCharType(upperCaseChar);
 createCharType(specialChar);
-createCharType(numChar);
+createCharType(numChar); */
 
 console.log(charTypes);
+
+//randomly choose the datatype for each chars
+
+let typeIndex = Math.floor(Math.random() * charTypes.length);
+console.log(typeIndex);
+
+charTypes[typeIndex]
+
+let charSet = {
+   "lowerCaseArr": ["a", "b", "c", "d", "e"],
+   "upperCaseArr": ["F", "G", "H", "E", "I"],
+   "specialCharArr": ["~", "!", "&", "$", "?"],
+   "numCharArr": [0, 3, 4, 8, 9]
+};
+
+
+
+
+
 //generate the password based on the user's choice, fill it with randomly chosen types of chars
 //with the length according to the user's choice
+
