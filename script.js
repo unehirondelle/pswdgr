@@ -99,24 +99,28 @@ function generatePassword() {
       let lowerCaseIndex = Math.floor(Math.random() * charSet.lowerCaseArr.length);
       newChar = charSet.lowerCaseArr[lowerCaseIndex];
       console.log("new lowercase char " + charSet.lowerCaseArr[lowerCaseIndex]);
+      console.log("------------");
     } else if (charTypes[typeIndex] === "upperCaseArr") {
       let upperCaseIndex = Math.floor(Math.random() * charSet.upperCaseArr.length);
       newChar = charSet.upperCaseArr[upperCaseIndex];
       console.log("new uppercase char " + charSet.upperCaseArr[upperCaseIndex]);
+      console.log("------------");
     } else if (charTypes[typeIndex] === "specialCharArr") {
       let specialCharIndex = Math.floor(Math.random() * charSet.specialCharArr.length);
       newChar = charSet.specialCharArr[specialCharIndex];
       console.log("new special char " + charSet.specialCharArr[specialCharIndex]);
+      console.log("------------");
     } else if (charTypes[typeIndex] === "numCharArr") {
       let numCharIndex = Math.floor(Math.random() * charSet.numCharArr.length);
       newChar = charSet.numCharArr[numCharIndex];
       console.log("new numeric char " + charSet.numCharArr[numCharIndex]);
+      console.log("------------");
     }
     newPass += newChar;
   }
   return newPass;
+  console.log("newPass " + newPass);
 }
 
-writePassword();
+// writePassword();
 
-console.log("newPass " + newPass);
