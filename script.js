@@ -14,10 +14,13 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 //ask user to type the number of letters for a new password
-let passLength = prompt("How many characters the password should consist of?");
-let passLenghtNum = parseInt(passLength);
+
+function generatePassword() {
+
+let passLength = "";
+// let passLenghtNum = parseInt(passLength);
 console.log("promt " + passLength);
-console.log("PromtNum" + passLenghtNum);
+// console.log("PromtNum" + passLenghtNum);
 
 //ask user does he/she want the lowercase chars in the password
 //ask user does he/she want the uppercase chars in the password
@@ -29,6 +32,22 @@ let upperCaseChar = false;
 let specialChar = false;
 let numChar = false;
 
+//randomly choose the datatype for each chars
+
+let charSet = {
+  "lowerCaseArr": ["a", "b", "c", "d", "e"],
+  "upperCaseArr": ["F", "G", "H", "E", "I"],
+  "specialCharArr": ["~", "!", "&", "$", "?"],
+  "numCharArr": [0, 3, 4, 8, 9]
+};
+
+//generate the password based on the user's choice, fill it with randomly chosen types of chars
+//with the length according to the user's choice
+
+let newPass = "";
+let newChar = "";
+
+  passLength = prompt("How many characters the password should consist of?");
 if (passLength >= 8 && passLength <= 128) {
   lowerCaseChar = confirm("Do you want lowercase chars in your password?");
   upperCaseChar = confirm("Do you want uppercase chars in your password?");
@@ -75,22 +94,8 @@ createCharType(numChar); */
 
 console.log(charTypes);
 
-//randomly choose the datatype for each chars
-
-let charSet = {
-  "lowerCaseArr": ["a", "b", "c", "d", "e"],
-  "upperCaseArr": ["F", "G", "H", "E", "I"],
-  "specialCharArr": ["~", "!", "&", "$", "?"],
-  "numCharArr": [0, 3, 4, 8, 9]
-};
-
-//generate the password based on the user's choice, fill it with randomly chosen types of chars
-//with the length according to the user's choice
-
-let newPass = "";
-let newChar = "";
-function generatePassword() {
-  for (let i = 0; i < passLenghtNum; i++) {
+  // for (let i = 0; i < passLenghtNum; i++) {
+    for (let i = 0; i < passLength; i++) {
     let typeIndex = Math.floor(Math.random() * charTypes.length);
     console.log("charTypeIndex: " + typeIndex);
 
@@ -118,8 +123,8 @@ function generatePassword() {
     }
     newPass += newChar;
   }
-  return newPass;
   console.log("newPass " + newPass);
+  return newPass;
 }
 
 // writePassword();
