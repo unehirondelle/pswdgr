@@ -78,21 +78,45 @@ console.log(charTypes);
 
 //randomly choose the datatype for each chars
 
-let typeIndex = Math.floor(Math.random() * charTypes.length);
-console.log(typeIndex);
 
-charTypes[typeIndex]
 
 let charSet = {
-   "lowerCaseArr": ["a", "b", "c", "d", "e"],
-   "upperCaseArr": ["F", "G", "H", "E", "I"],
-   "specialCharArr": ["~", "!", "&", "$", "?"],
-   "numCharArr": [0, 3, 4, 8, 9]
+  "lowerCaseArr": ["a", "b", "c", "d", "e"],
+  "upperCaseArr": ["F", "G", "H", "E", "I"],
+  "specialCharArr": ["~", "!", "&", "$", "?"],
+  "numCharArr": [0, 3, 4, 8, 9]
 };
 
+let password = "";
+let newChar = "";
+
+for (let i = 0; i < passLenghtNum; i++) {
+  let typeIndex = Math.floor(Math.random() * charTypes.length);
+  console.log("charTypeIndex: " + typeIndex);
+
+  console.log(charTypes[typeIndex]);
+  if (charTypes[typeIndex] === "lowerCaseArr") {
+    let lowerCaseIndex = Math.floor(Math.random() * charSet.lowerCaseArr.length);
+    newChar = charSet.lowerCaseArr[lowerCaseIndex];
+    console.log("new lowercase char " + charSet.lowerCaseArr[lowerCaseIndex]);
+  } else if (charTypes[typeIndex] === "upperCaseArr") {
+    let upperCaseIndex = Math.floor(Math.random() * charSet.upperCaseArr.length);
+    newChar = charSet.upperCaseArr[upperCaseIndex];
+    console.log("new uppercase char " + charSet.upperCaseArr[upperCaseIndex]);
+  } else if (charTypes[typeIndex] === "specialCharArr") {
+    let specialCharIndex = Math.floor(Math.random() * charSet.specialCharArr.length);
+    newChar = charSet.specialCharArr[specialCharIndex];
+    console.log("new special char " + charSet.specialCharArr[specialCharIndex]);
+  } else if (charTypes[typeIndex] === "numCharArr") {
+    let numCharIndex = Math.floor(Math.random() * charSet.numCharArr.length);
+    newChar = charSet.numCharArr[numCharIndex];
+    console.log("new numeric char " + charSet.numCharArr[numCharIndex]);
+  }
+  password += newChar;
+}
 
 
-
+console.log("password " + password);
 
 //generate the password based on the user's choice, fill it with randomly chosen types of chars
 //with the length according to the user's choice
