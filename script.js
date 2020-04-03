@@ -17,85 +17,83 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
 
-let passLength = "";
-// let passLenghtNum = parseInt(passLength);
-console.log("promt " + passLength);
-// console.log("PromtNum" + passLenghtNum);
+  let passLength = "";
+  console.log("promt " + passLength);
 
-//ask user does he/she want the lowercase chars in the password
-//ask user does he/she want the uppercase chars in the password
-//ask user does he/she want the special chars in the password
-//ask user does he/she want the numbers in the password
+  //ask user does he/she want the lowercase chars in the password
+  //ask user does he/she want the uppercase chars in the password
+  //ask user does he/she want the special chars in the password
+  //ask user does he/she want the numbers in the password
 
-let lowerCaseChar = false;
-let upperCaseChar = false;
-let specialChar = false;
-let numChar = false;
+  let lowerCaseChar = false;
+  let upperCaseChar = false;
+  let specialChar = false;
+  let numChar = false;
 
-//randomly choose the datatype for each chars
+  //randomly choose the datatype for each chars
 
-let charSet = {
-  "lowerCaseArr": ["a", "b", "c", "d", "e"],
-  "upperCaseArr": ["F", "G", "H", "E", "I"],
-  "specialCharArr": ["~", "!", "&", "$", "?"],
-  "numCharArr": [0, 3, 4, 8, 9]
-};
+  let charSet = {
+    "lowerCaseArr": ["a", "b", "c", "d", "e"],
+    "upperCaseArr": ["F", "G", "H", "E", "I"],
+    "specialCharArr": ["~", "!", "&", "$", "?"],
+    "numCharArr": [0, 3, 4, 8, 9]
+  };
 
-//generate the password based on the user's choice, fill it with randomly chosen types of chars
-//with the length according to the user's choice
+  //generate the password based on the user's choice, fill it with randomly chosen types of chars
+  //with the length according to the user's choice
 
-let newPass = "";
-let newChar = "";
+  let newPass = "";
+  let newChar = "";
 
-  passLength = prompt("How many characters the password should consist of?");
-if (passLength >= 8 && passLength <= 128) {
-  lowerCaseChar = confirm("Do you want lowercase chars in your password?");
-  upperCaseChar = confirm("Do you want uppercase chars in your password?");
-  specialChar = confirm("Do you want special chars in your password?");
-  numChar = confirm("Do you want numbers in your password?");
-} else if (passLength !== "" && passLength !== null) {
-  alert("Please choose the number from 8 to 128");
-} else {
-  alert("Password will not be generated.");
-}
-
-console.log(lowerCaseChar);
-console.log(upperCaseChar);
-console.log(specialChar);
-console.log(numChar);
-
-let charTypes = [];
-
-/* function createCharType(char) {
-  if (char == true) {
-    charTypes.push("true");
+  passLength = prompt("How many characters the password should consist of? \nChoose a number from 8 and 128");
+  if (passLength >= 8 && passLength <= 128) {
+    lowerCaseChar = confirm("Do you want lowercase chars in your password?");
+    upperCaseChar = confirm("Do you want uppercase chars in your password?");
+    specialChar = confirm("Do you want special chars in your password?");
+    numChar = confirm("Do you want numbers in your password?");
+  } else if (passLength !== "" && passLength !== null) {
+    alert("Please choose a number from 8 to 128");
   } else {
-    charTypes.push("false");
+    alert("Password will not be generated.");
   }
-} */
 
-if (lowerCaseChar) {
-  charTypes.push("lowerCaseArr");
-}
-if (upperCaseChar) {
-  charTypes.push("upperCaseArr");
-}
-if (specialChar) {
-  charTypes.push("specialCharArr");
-}
-if (numChar) {
-  charTypes.push("numCharArr");
-}
+  console.log(lowerCaseChar);
+  console.log(upperCaseChar);
+  console.log(specialChar);
+  console.log(numChar);
 
-/* createCharType(lowerCaseChar);
-createCharType(upperCaseChar);
-createCharType(specialChar);
-createCharType(numChar); */
+  let charTypes = [];
 
-console.log(charTypes);
+  /* function createCharType(char) {
+    if (char == true) {
+      charTypes.push("true");
+    } else {
+      charTypes.push("false");
+    }
+  } */
 
-  // for (let i = 0; i < passLenghtNum; i++) {
-    for (let i = 0; i < passLength; i++) {
+  if (lowerCaseChar) {
+    charTypes.push("lowerCaseArr");
+  }
+  if (upperCaseChar) {
+    charTypes.push("upperCaseArr");
+  }
+  if (specialChar) {
+    charTypes.push("specialCharArr");
+  }
+  if (numChar) {
+    charTypes.push("numCharArr");
+  }
+
+  /* createCharType(lowerCaseChar);
+  createCharType(upperCaseChar);
+  createCharType(specialChar);
+  createCharType(numChar); */
+
+  console.log(charTypes);
+
+
+  for (let i = 0; i < passLength; i++) {
     let typeIndex = Math.floor(Math.random() * charTypes.length);
     console.log("charTypeIndex: " + typeIndex);
 
@@ -126,6 +124,3 @@ console.log(charTypes);
   console.log("newPass " + newPass);
   return newPass;
 }
-
-// writePassword();
-
