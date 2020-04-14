@@ -10,7 +10,7 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: lemonchiffon;
+  background-color: lemonchiffon;  
 }
 
 body {
@@ -110,6 +110,7 @@ button[disabled] {
   padding-right: 15px;
   padding-bottom: 85px;
   font-size: 1.2rem;
+  font-style: italic;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
