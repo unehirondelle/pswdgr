@@ -54,7 +54,7 @@ function generatePassword() {
   } else if (passLength !== "" && passLength !== null) {
     alert("Please choose a number from 8 to 128");
   } else {
-    alert("Password will not be generated.");
+    alert("Password will not be generated. You need to choose at least one char criteria");
   }
 
   console.log(lowerCaseChar);
